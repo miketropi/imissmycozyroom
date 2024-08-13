@@ -1,24 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { useAppContext } from './context/AppContext';
+import MusicCozyTemp from './templates/MusicCozyTemp';
 
 function App() {
+  const { soundBgEnable, setSoundBgEnable } = useAppContext();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MusicCozyTemp>
+      I miss my cozy room... <button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button>
+    </MusicCozyTemp>
   );
 }
 
