@@ -6,6 +6,6 @@ export default function BackgroundVideo({ videoUrlMp4, muted }) {
     <VideoBg muted={ muted } autoPlay={ true } loop={ true }>
       <VideoBg.Source src={ videoUrlMp4 } type="video/mp4" />
     </VideoBg>
-    <div className="overlay-layer"></div>
+    {/* <div className="overlay-layer"></div> */}
   </div>
 }

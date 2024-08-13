@@ -12,3 +12,13 @@
   line-height: 1.5em;
 }
 
+.music-cozy-template-page {
+  position: relative;
+
+  .main-container {
+    position: fixed;
+    width: 40%;
+    bottom: 10%;
+    left: 5%;
+  }
+}
