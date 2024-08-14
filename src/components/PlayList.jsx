@@ -18,11 +18,13 @@ export default function PlayList() {
     >
       {
         playList.map((item, __index) => {
-          const { thumbnail, name } = item;
+          const { thumbnail, name, avatar, rating } = item;
           return <SwiperSlide key={ __index }>
-            <div className="play-list__cart">
+            <div className="play-list__cart"> 
               <img className="__card-thumb" src={ thumbnail } alt={ name } />
               <div className="__card-entry">
+                { rating }
+                <img className="__card-ava" src={ avatar } alt="#avatar" />
                 <h4 className="__card-title">{ name }</h4>
               </div>
             </div>
