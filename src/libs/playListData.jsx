@@ -34,6 +34,7 @@ const playListData = [
     avatar: 'https://learn-fly-mike.fly.dev/assets/link/66bc188a3fa609bc7505a640',
     name: 'A meal to warm your heart 🍜 - Animation, loop animation, Doggie Corgi',
     source: 'https://learn-fly-mike.fly.dev/storage/uploads/2024/08/13/A-meal-to-warm-your-heart----Animation-loop-animation-Doggie-Corgi_uid_66bb0c8bbc7a4.mp4',
+    rating: getRandomizer(1, 5),
   },
   {
     thumbnail: 'https://learn-fly-mike.fly.dev/assets/link/66bb5518de8f5daffc0f86d0',
