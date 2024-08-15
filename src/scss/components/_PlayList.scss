@@ -1,4 +1,14 @@
 .play-list {
+  position: relative;
+
+  .swiper-custom-pagination--container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.83em 0;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+  }
 
   &__cart {
     position: relative;
