@@ -21,6 +21,7 @@ export default function PlayList() {
         type: 'fraction',
         el: '.swiper-custom-pagination',
       }} 
+      centeredSlides={ true }
       modules={ [Pagination, FreeMode] }
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
