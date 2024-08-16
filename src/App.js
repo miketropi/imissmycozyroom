@@ -12,7 +12,9 @@ function App() {
     <MusicCozyTemp>
       {/* I miss my cozy room... <button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button> */}
       <div>
-        <h2 className="ss-heading">Leave a message</h2>
+        
+
+        <h2 className="ss-heading">Viewer messages</h2>
         <ViewerMessage />
         
         <h2 className="ss-heading"><img width={ '26px' } src={ musicIcon } alt="#music" /> Playlist</h2>

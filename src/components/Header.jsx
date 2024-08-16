@@ -1,6 +1,9 @@
+import { useAppContext } from '../context/AppContext';
 import { TypeAnimation } from 'react-type-animation';
 
 export default function Header() {
+  const { soundBgEnable, setSoundBgEnable } = useAppContext(); 
+
   return <header className="music-cozy-header">
     <div className="header-container">
       <a className="site-brand" href="/">
@@ -23,6 +26,7 @@ export default function Header() {
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/report">Report</a></li>
+          <li><button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button></li>
         </ul>
       </div>
     </div>
