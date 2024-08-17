@@ -12,8 +12,6 @@ function App() {
     <MusicCozyTemp>
       {/* I miss my cozy room... <button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button> */}
       <div>
-        
-
         <h2 className="ss-heading">Viewer messages</h2>
         <ViewerMessage />
         

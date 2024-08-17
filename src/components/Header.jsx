@@ -12,7 +12,7 @@ export default function Header() {
             // Same substring at the start will only be typed out once, initially
             'I miss my cozy room...',
             1000, 
-            'my cozy space.',
+            'I miss you.',
             1000, 
           ]}
           wrapper="span"
