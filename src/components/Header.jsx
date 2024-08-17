@@ -23,9 +23,9 @@ export default function Header() {
       </a>
       <div className="site-nav">
         <ul className="menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/report">Report</a></li>
+          {/* <li><a href="/">Home</a></li> */}
+          <li><a href="/about">about</a></li>
+          <li><a href="/report">report</a></li>
           <li><button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button></li>
         </ul>
       </div>

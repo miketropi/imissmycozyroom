@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import { cutString } from '../libs/helper';
 
 import 'swiper/css';
@@ -41,27 +41,32 @@ const MessageItem = (props) => {
   const { name, message, datetime } = props;
 
   return <div className="message-item">
-    <div className="heading-message">
+    {/* <div className="heading-message">
       <strong>{ name }</strong>
       <div>{ datetime }</div>
-    </div>
-    <div className="message-content" dangerouslySetInnerHTML={{__html: `${ cutString(message, 180) }...`}}></div> 
+    </div> */}
+    <div className="message-content" dangerouslySetInnerHTML={{__html: `"${ cutString(message, 180) }..."`}}></div> 
+    <div className="message-bottom">{ name }, { datetime }</div>
   </div>
 } 
 
 export default function ViewerMessage({ message }) {
-  const dotRef = useRef();
 
   return <div className="viewer-message">
-    <div ref={ dotRef } className="__custom-dot"></div>
+    <div className="viewer-message__custom-dot"></div>
     <Swiper
       slidesPerView={ 1 }
       spaceBetween={ 20 }
       centeredSlides={ true }
+      autoplay={{
+        delay: 5 * 1000,
+        disableOnInteraction: false,
+      }}
       pagination={{
-        el: dotRef.current
+        type: 'fraction',
+        el: '.viewer-message__custom-dot'
       }} 
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
