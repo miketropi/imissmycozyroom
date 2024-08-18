@@ -41,10 +41,6 @@ const MessageItem = (props) => {
   const { name, message, datetime } = props;
 
   return <div className="message-item">
-    {/* <div className="heading-message">
-      <strong>{ name }</strong>
-      <div>{ datetime }</div>
-    </div> */}
     <div className="message-content" dangerouslySetInnerHTML={{__html: `"${ cutString(message, 180) }..."`}}></div> 
     <div className="message-bottom">{ name }, { datetime }</div>
   </div>
@@ -53,7 +49,7 @@ const MessageItem = (props) => {
 export default function ViewerMessage({ message }) {
 
   return <div className="viewer-message">
-    <div className="viewer-message__custom-dot"></div>
+    <div className="viewer-message__custom-pagination"></div>
     <Swiper
       slidesPerView={ 1 }
       spaceBetween={ 20 }
@@ -64,7 +60,7 @@ export default function ViewerMessage({ message }) {
       }}
       pagination={{
         type: 'fraction',
-        el: '.viewer-message__custom-dot'
+        el: '.viewer-message__custom-pagination'
       }} 
       modules={[Pagination, Autoplay]}
       onSlideChange={() => console.log('slide change')}

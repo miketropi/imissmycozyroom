@@ -1,14 +1,18 @@
 .viewer-message {
   position: relative;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 
-  .viewer-message__custom-dot {
+  .viewer-message__custom-pagination {
     position: absolute;
     right: 0;
     top: 0;
     padding: 0.83em 0;
     transform: translateY(-100%);
     -webkit-transform: translateY(-100%);
+    width: auto;
+    left: auto;
+    height: auto;
+    bottom: auto;
   }
 }
 

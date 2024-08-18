@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useAppContext } from '../context/AppContext';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode, Pagination, Mousewheel } from 'swiper/modules';
 import RatingStart from './RatingStart';
 import textImage from '../images/choose-the-melody-you-like.png';
 import 'swiper/css';
@@ -40,7 +40,8 @@ export default function PlayList() {
         el: '.swiper-custom-pagination',
       }} 
       centeredSlides={ true }
-      modules={ [Pagination, FreeMode] }
+      mousewheel={ true }
+      modules={ [Pagination, FreeMode, Mousewheel] }
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
