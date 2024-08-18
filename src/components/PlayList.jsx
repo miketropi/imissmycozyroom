@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { useAppContext } from '../context/AppContext';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Mousewheel } from 'swiper/modules';

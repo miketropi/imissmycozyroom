@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import { cutString } from '../libs/helper';
@@ -46,7 +45,7 @@ const MessageItem = (props) => {
   </div>
 } 
 
-export default function ViewerMessage({ message }) {
+export default function ViewerMessage() {
 
   return <div className="viewer-message">
     <div className="viewer-message__custom-pagination"></div>

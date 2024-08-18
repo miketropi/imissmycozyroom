@@ -3,7 +3,7 @@ import BackgroundVideo from "../components/BackgroundVideo";
 import Header from "../components/Header";
 
 export default function MusicCozyTemp({ children }) {
-  const { videoBackgroundUrl, muted, setMuted, playing } = useAppContext();
+  const { muted, playing } = useAppContext();
 
   return <div id="PAGE" className="music-cozy-template-page">
     <BackgroundVideo videoUrl={ playing?.source } muted={ muted } />

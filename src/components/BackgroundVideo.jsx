@@ -1,4 +1,3 @@
-import VideoBg from "reactjs-videobg";
 import ReactPlayer from 'react-player'
 
 export default function BackgroundVideo({ videoUrl, muted }) {

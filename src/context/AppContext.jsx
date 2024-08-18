@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 import playListData from "../libs/playListData";
 
 const AppContext = createContext(null);
