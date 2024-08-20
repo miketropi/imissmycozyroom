@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 import { TypeAnimation } from 'react-type-animation';
 
 export default function Header() {
-  const { soundBgEnable, setSoundBgEnable } = useAppContext(); 
+  const { menu, soundBgEnable, setSoundBgEnable } = useAppContext(); 
 
   return <header className="music-cozy-header">
     <div className="header-container">
@@ -24,9 +24,12 @@ export default function Header() {
       </a>
       <div className="site-nav">
         <ul className="menu">
-          {/* <li><a href="/">Home</a></li> */}
-          <Link to="/about">About</Link>
-          <Link to="/report">Report</Link>
+          {
+            menu.map((item, __index) => {
+              const { name, to } = item;
+              return <Link key={ __index } to={ to }>{ name }</Link>
+            })
+          }
           <li><button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button></li>
         </ul>
       </div>
