@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAppContext } from '../context/AppContext';
 import { TypeAnimation } from 'react-type-animation';
 
@@ -24,8 +25,8 @@ export default function Header() {
       <div className="site-nav">
         <ul className="menu">
           {/* <li><a href="/">Home</a></li> */}
-          <li><a href="/about">about</a></li>
-          <li><a href="/report">report</a></li>
+          <Link to="/about">About</Link>
+          <Link to="/report">Report</Link>
           <li><button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button></li>
         </ul>
       </div>
