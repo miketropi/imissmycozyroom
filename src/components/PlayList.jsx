@@ -1,7 +1,7 @@
 import { useAppContext } from '../context/AppContext';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Mousewheel } from 'swiper/modules';
-import RatingStart from './RatingStart';
+// import RatingStart from './RatingStart';
 import textImage from '../images/choose-the-melody-you-like.png';
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -18,12 +18,14 @@ const PlayPauseButton = ({ isPlaying, onClick }) => {
 }
 
 export default function PlayList() {
-  const { playList, setPlaying, setMuted } = useAppContext();
+  const { contentPlayList, setPlaying, setMuted } = useAppContext();
 
   const onPlaying = (data) => {
     setPlaying(data);
     setMuted(false);
   }
+
+  if(!contentPlayList) return <></>
 
   return <div className="play-list"> 
     <img className="tuts-text" src={ textImage } alt="#choose the melody you like" />
@@ -45,14 +47,16 @@ export default function PlayList() {
       onSwiper={(swiper) => console.log(swiper)}
     >
       {
-        playList.map((item, __index) => {
-          const { thumbnail, name, avatar, rating } = item;
-          return <SwiperSlide key={ __index }>
+        contentPlayList.map((item, __index) => {
+          const { _id, thumbnail, name, avatar } = item;
+          const thumbnailUrl =  `${ process.env.REACT_APP_MEDIA_ENDPOINT }${ thumbnail?.path }`;
+          const avatarUrl =  `${ process.env.REACT_APP_MEDIA_ENDPOINT }${ avatar?.path }`;
+          return <SwiperSlide key={ _id }>
             <div className="play-list__cart"> 
-              <img className="__card-thumb" src={ thumbnail } alt={ name } />
+              <img className="__card-thumb" src={ thumbnailUrl } alt={ name } />
               <div className="__card-entry">
-                <img className="__card-ava" src={ avatar } alt="#avatar" />
-                <RatingStart number={ parseInt(rating) } />
+                <img className="__card-ava" src={ avatarUrl } alt="#avatar" />
+                {/* <RatingStart number={ parseInt(rating) } /> */}
                 <h4 className="__card-title">{ name }</h4>
               </div>
               <PlayPauseButton onClick={ () => { 
