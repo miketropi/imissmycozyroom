@@ -26,11 +26,16 @@ export default function Header() {
         <ul className="menu">
           {
             menu.map((item, __index) => {
-              const { name, to } = item;
-              return <Link key={ __index } to={ to }>{ name }</Link>
+              const { name, to, icon } = item;
+              return <li className="menu-item">
+                <Link key={ __index } to={ to }>
+                  <img className="menu-icon" src={ icon } alt={ `#${ name }` } />
+                  { name }
+                </Link>
+              </li>
             })
           }
-          <li><button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button></li>
+          {/* <li><button onClick={ e => setSoundBgEnable(!soundBgEnable) }>Music on/off</button></li> */}
         </ul>
       </div>
     </div>

@@ -1,16 +1,20 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import playListData from "../libs/playListData";
 import { getPlayList, getViewerMessages } from '../libs/api';
+import iIcon from '../images/i-icon.svg';
+import bugIcon from '../images/bug-icon.svg';
 
 const AppContext = createContext(null);
 const __NAV_LINKS = [
   {
-    name: 'About',
+    name: 'about',
+    icon: iIcon,
     to: '/about'
   },
   {
-    name: 'Report',
-    to: '/reports',
+    name: 'report',
+    icon: bugIcon,
+    to: '/report',
   }
 ]
 
